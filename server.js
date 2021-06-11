@@ -1,4 +1,16 @@
 const express = require("express")
 const app = express()
+const PORT = 3333
 
-app.listen(3333, ()=> console.log("Servidor bombando!"))
+//conectando database
+
+const db = require("./src/data/database")
+db.connect()
+
+
+
+
+
+app.use(express.json())
+
+app.listen(PORT, ()=> console.log("Servidor bombando!"))
